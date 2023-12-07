@@ -1,19 +1,17 @@
-const { KYCAgeCredential } = require("./vcHelpers/KYCAgeCredential");
+const { POPA69 } = require('./vcHelpers/KYCAgeCredential');
 
 // design your own customised authentication requirement here using Query Language
 // https://0xpolygonid.github.io/tutorials/verifier/verification-library/zk-query-language/
 
-const humanReadableAuthReason = "Must be born before this year";
+const humanReadableAuthReason = 'Must score less than this number';
 
 const credentialSubject = {
-  birthday: {
-    // users must be born before this year
-    // birthday is less than Jan 1, 2023
-    $lt: 20230101,
+  marks: {
+    $lt: 100,
   },
 };
 
-const proofRequest = KYCAgeCredential(credentialSubject);
+const proofRequest = POPA69(credentialSubject);
 
 module.exports = {
   humanReadableAuthReason,
